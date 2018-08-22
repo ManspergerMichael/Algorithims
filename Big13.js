@@ -144,6 +144,13 @@ function shiftVals(arr){
 
 //given an array replace each negitive value with the string "Dojo"
 function swapNegs(arr){
-    
+    for(var i = 0; i<arr.length; i++){
+        if(arr[i] < 0){
+            arr[i] = "Dojo";
+        }
+    }
+    return arr;
 }
+//console.log(swapNegs([1,2,-3,-4,5]));
+
 
