@@ -41,6 +41,7 @@ function factorial(number){
 //console.log(factorial(6));
 
 //non-recursive fibonacci sequence 
+//with O(n) time complexity
 function fibonacciLoop(num){
     //a fibonachi sequence starts with 0 and 1
     var a = 1, b = 0, temp;
@@ -57,11 +58,39 @@ function fibonacciLoop(num){
     }
     return b;
   }
-  console.log(fibonacciLoop(9));
+//console.log(fibonacciLoop(5));
 
-  //recursive fibonachi sequence
+  //recursive fibonachi sequence without memoizeation
+  //Time complexity is O(2^n) 
  function fibonacciRecursion(num){
-    if (num <= 1) return 1;
+    num = Math.trunc(num);
+    if (num == 1) {
+        return 1;
+    }
+    if (num == 0){
+        return 0;
+    }
     return fibonacciRecursion(num - 1) + fibonacciRecursion(num - 2);
  }
- console.log(fibonacciRecursion(9));
+//console.log(fibonacciRecursion(4));
+
+//add together previous three values in the sequence 
+// Tribonacci(3) = (0+0+1)=1
+function tribonacci(num){
+    num = Math.trunc(num);
+    //base case for tribonachi 
+    if(num == 2){return 1;}
+    if(num == 1){return 0;}
+    if(num <= 0){return 0;}
+    //console.log(num);
+    return tribonacci(num - 1) + tribonacci(num -2) + tribonacci(num - 3);
+}
+console.log(tribonacci(4));
+
+/*
+Notes on Recursion:
+The Base Case is simular to the escape condition of a loop
+i.e for(var i = 0; I<ARRAY.LENGTH; i++){}
+
+Modify the data at the time of the function call when continuing the "loop"
+*/

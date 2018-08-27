@@ -11,6 +11,7 @@
             //"program": "${workspaceFolder}/Big13.js"
             //"program": "${workspaceFolder}/Arrays.js"
             "program": "${workspaceFolder}/Recursion.js"
+            //"program": "/${workspaceFolder}/fibonachi.js"
         }
     ]
 }
