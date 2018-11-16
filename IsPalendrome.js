@@ -2,16 +2,20 @@
 
 
 isPalendrome = function(queue){
+    //create new singly linked stack
     var stack = new SLStack();
+    //copy queue argument into a new queue
     var newQueue = queue;
-    var runner = newQueue.head;
-    while(runner != undefined){
+    //while newQueue is not empty dequeue into the stack 
+    while(!newQueue.isEmpty()){
         stack.push(newQueue.Dequeue());
-        runner = runner.next;
     }
-    while(stack.top != undefined){
+    //while stack is not empty, enqueue into newQueue
+    //the reverse of the argument queue is now in newQueue 
+    while(!stack.isEmpty()){
         newQueue.Enqueue(stack.pop());
     }
+    //return the result of compaire queues
     return compaireQueues(newQueue, queue);
 }
 
@@ -31,39 +35,48 @@ compaireQueues = function(queue1, queue2){
     return true;
 }
 class Queue{
+   
     constructor(){
-        head;
-        tail;
-        size = 0;
+        this.head;
+        this.tail;
+        this.size = 0;
     }
     
 
     Enqueue(val){
-        var newNode = Node(val);
-        if(head === undefined){
-            head = newNode;
-            tail = newNode;
-            size ++;
+        var newNode = new Node(val);
+        if(this.head === undefined){
+            this.head = newNode;
+            this.tail = newNode;
+            this.size ++;
         }
         else{
-           tail.next = newNode;
-           tail = newNode;
-           size ++;
+            this.tail.next = newNode;
+            this.tail = newNode;
+            this.size ++;
         }
     }
 
     Dequeue(){
-        var result = head;
-        head = head.next;
-        size --;
+        var result = this.head;
+        this.head = this.head.next;
+        this.size --;
         return result;
+    }
+    isEmpty(){
+        if(this.head === undefined){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 
 class Node {
     constructor(val){
         this.val = val
-        next = undefined;
+        this.next = undefined;
     }
 
     print(){
@@ -73,25 +86,33 @@ class Node {
 
 class SLStack {
     constructor(){
-        top = undefined;
+        this.top = undefined;
     }
     
 
     push(val){
         var NewNode = new Node(val);
-        if(top === undefined){
-            top = NewNode;
+        if(this.top === undefined){
+            this.top = NewNode;
         }
         else{
-            NewNode.next = top;
-            top = NewNode;
+            NewNode.next = this.top;
+            this.top = NewNode;
         }
 
     }
     pop(){
-        var result = top;
-        top = top.next;
+        var result = this.top;
+        this.top = this.top.next;
         return result;
+    }
+    isEmpty(){
+        if(this.top === undefined){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 
