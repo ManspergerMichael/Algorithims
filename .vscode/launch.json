@@ -12,7 +12,7 @@
             //"program": "${workspaceFolder}/Arrays.js"
             //"program": "${workspaceFolder}/Recursion.js"
             //"program": "/${workspaceFolder}/fibonachi.js"
-            "program": "/${workspaceFolder}/isPalendrome.js"
+            "program": "/${workspaceFolder}/BinarySearchTree.js"
         }
     ]
 }
