@@ -1,4 +1,4 @@
-class BSNode{
+class BSTNode{
 
     constructor(val){
         this.val = val;
@@ -25,14 +25,14 @@ class BSTree {
 
     Add(val){
         if(this.head == undefined){
-            this.head = new BSNode(val);
+            this.head = new BSTNode(val);
         }
         else{
             var cur = this.head;
             while(true){
                 if(val > cur.val){
                     if(cur.right == undefined){
-                        cur.right = new BSNode(val);
+                        cur.right = new BSTNode(val);
                         break;
                     }
                     else{
@@ -41,7 +41,7 @@ class BSTree {
                 }
                 if(val < cur.val){
                     if(cur.left == undefined){
-                        cur.left = new BSNode(val);
+                        cur.left = new BSTNode(val);
                         break;
                     }
                     else{
@@ -102,7 +102,8 @@ class BSTree {
 }
 
 
-//outside methods of BST
+//methods outside of BST
+//it seems like mostly recursion methods are coded ouside of the tree
 Size = function(node){
     if (node === undefined){
         return 0;
@@ -128,6 +129,18 @@ isBalanced = function(node){
     }
     return (1 + Math.max(leftH,rightH));
 }
+
+ArrayToBST = function(arr, start, end){
+    if(start > end){
+        return undefined;
+    }
+    var mid = (start + end) / 2;
+    var root = new BSTNode(arr[mid]);
+    root.left = ArrayToBST(arr, start, mid -1);
+    root.right = ArrayToBST(arr, mid + 1, end);
+    return root
+}
+
 var tree = new BSTree();
 tree.Add(50);
 tree.Add(100);
@@ -136,6 +149,7 @@ tree.Add(15);
 tree.Add(101);
 tree.Add(75);
 tree.Add(1);
+
 console.log("Is Balenced? " + isBalanced(tree.head));
 console.log(Size(tree.head));
 console.log(tree.Min());
