@@ -138,7 +138,7 @@ ArrayToBST = function(arr, start, end){
     var root = new BSTNode(arr[mid]);
     root.left = ArrayToBST(arr, start, mid -1);
     root.right = ArrayToBST(arr, mid + 1, end);
-    return root
+    return root;
 }
 
 var tree = new BSTree();
