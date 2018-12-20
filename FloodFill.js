@@ -1,9 +1,17 @@
 floodFill = function(canvas, startPoint, newColor){
     var oldColur = canvas[startPoint[0]] [startPoint[1]];
-    if(canvas[startPoint[0]+1][startPoint[1]] === oldColur){
+    if(startPoint[0]+1 < canvas[0].length
+        && canvas[startPoint[0]+1][startPoint[1]] === oldColur){
         var nextPoint = [startPoint[0]+1,startPoint[1]];
         floodFill(canvas,nextPoint,newColur);
     }
+    //RangeError: Maximum call stack size exceeded
+    if(startPoint[0]-1 != -1 
+        && canvas[startPoint[0]-1][startPoint[1]] === oldColur){
+        var nextPoint = [startPoint[0]-1,startPoint[1]];
+        floodFill(canvas,nextPoint,newColur);
+    }
+
     //other if statements go here
     canvas [startPoint[0]] [startPoint[1]] = newColor;
 }
