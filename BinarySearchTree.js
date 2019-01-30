@@ -157,3 +157,34 @@ console.log(tree.Max());
 console.log(tree.head.Height());
 
 
+//Convert to javascript from Java 7
+//this code prints the binary search tree by levels left to right
+public static void levelOrder(Node root) {
+    //create a queue
+    Queue<Node> queue = new LinkedList<Node>();
+    //add the root of the tree
+    queue.add(root);
+    Node node;
+    //while the queue is not empty
+    while(queue.peek() != null){
+        //remove the top node of the queue
+        node = queue.remove();
+        //first add the top nodes left child node to the queue
+        if(node.left != null)
+        {
+            queue.add(node.left);
+        }
+        //then the right child node
+        if(node.right != null)
+        {
+            queue.add(node.right);
+        }
+        //print the top node's data
+        System.out.print(node.data + " ");
+        
+    }
+    //loop repeats until empty
+  
+}
+
+
