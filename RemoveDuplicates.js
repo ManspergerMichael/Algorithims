@@ -1,7 +1,7 @@
 //remove duplicates from sorted array in place
-var nums = [1,1,2];
 
-var removeDuplicates = function(nums) {
+
+removeDuplicates = function(nums) {
     for(var i = 1; i < nums.length; i++)
         {
             if(nums[i] == nums[i-1])
@@ -17,4 +17,5 @@ var removeDuplicates = function(nums) {
     console.log(nums.length);
     return nums.length;
 };
+var nums = [1,1,2];
 console.log(removeDuplicates(nums));
