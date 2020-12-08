@@ -26,7 +26,7 @@ function factorial(number){
     if(number == 0){
         return 1;
     }
-    //round each calulation down to integer
+    //round each calulation down to whole number
     if(number % 2 != 0){
         number = Math.floor(number);
     }

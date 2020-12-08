@@ -13,7 +13,7 @@ function printTo255(){
 
 //print all odd intergers between 1-255
 function printOdds(){
-    for(var i = 1;i<256;i++){
+    for(var i = 1; i < 256; i++){
         if(i % 2 != 0){
             console.log(i);
         }
@@ -21,10 +21,10 @@ function printOdds(){
 }
 //printOdds();
 
-//print 0 - 255 and the sum of all counted ints
+//print 0 - 255 and the sum of all counted integers
 function printAndSum(){
     var sum = 0;
-    for(var i = 0; i<256; i++){
+    for(var i = 0; i < 256; i++){
         console.log(i);
         sum += i;
         console.log("The sum is: "+sum);
@@ -34,7 +34,7 @@ function printAndSum(){
 
 //iterate through array
 function printArray(arr){
-    for(var i = 0; i<arr.length; i++){
+    for(var i = 0; i < arr.length; i++){
         console.log(arr[i]);
     }
 }
@@ -43,7 +43,7 @@ function printArray(arr){
 //find max element of array
 function printMax(arr){
     var max = arr[0];
-    for(var i = 0; i<arr.length;i++){
+    for(var i = 0; i < arr.length; i++){
         if( arr[i] > max){
             max = arr[i];
         }
@@ -114,9 +114,11 @@ function MinMaxAvg(arr){
     var sum = 0;
     for(var i = 0; i<arr.length; i++){
         sum += arr[i];
+
         if(min > arr[i]){
             min = arr[i];
         }
+        
         if(max < arr[i]){
             max = arr[i];
         }
