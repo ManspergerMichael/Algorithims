@@ -40,7 +40,7 @@ function almostIncreasingSequenceOne(sequence) {
     }
     //if the count of numbers to be removed is more than one, return false
     if(count > 1){
-        console.log(sequence);
+        //console.log(sequence);
         return false;
     }
     else{ 
@@ -60,11 +60,11 @@ function almostIncreasingSequence(arr) {
         }
     }
     if(count > 1){
-        console.log(count);
+        //console.log(count);
         return false;
     }
     else{
-        console.log(count);
+        //console.log(count);
         return true;
     }
 }

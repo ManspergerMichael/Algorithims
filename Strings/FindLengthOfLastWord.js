@@ -2,6 +2,8 @@
  * find the length of the last word in the given string
  * @param {string} s
  * @return {number}
+ * 
+ * Not finished
  */
 var lengthOfLastWord = function(s) {
     var arr = s.split(" ");

@@ -6,7 +6,7 @@
  /**
   * My first attempt at the problem,
   * I mis-read the instructions.
-  * I'm keeping this as an example of javaScriupt dictionaries.
+  * I'm keeping this as an example of javaScript dictionaries.
   */
 
 var countAndSayFirst = function(n) {
