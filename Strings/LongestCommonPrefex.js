@@ -2,6 +2,9 @@
 almost done. Error when array of strings is less than 3 */
 
 var longestCommonPrefix = function(strs) {
+    if(strs.length < 3){
+        return 0;
+    }
     if(strs.length == 0 || strs[0] == "")
         {
             return "";

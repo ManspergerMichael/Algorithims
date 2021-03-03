@@ -4,7 +4,7 @@ is equal to the second half.
 Return True if so
 */
 function isLucky(n) {
-    //create an array and split the digets of the given number into elements
+    //create an array and split the digits of the given number into elements
     var arr = Array.from(n.toString()).map(Number);
     var sum1 = 0;
     var sum2 = 0;
